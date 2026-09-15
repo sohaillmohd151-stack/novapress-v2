@@ -37,7 +37,7 @@ RUN echo '<Directory /var/www/html/public/>\n\
 </Directory>' > /etc/apache2/conf-available/override.conf && \
 a2enconf override
 
-a2enmod rewrite
+RUN a2enmod rewrite
 
 # Install PHP and Node dependencies, then build frontend assets
 RUN composer install --no-dev --optimize-autoloader
