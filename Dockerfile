@@ -42,7 +42,7 @@ RUN a2enmod rewrite
 
 # Install project dependencies
 RUN composer install --no-dev --optimize-autoloader
-RUN npm install && npm run build
+RUN npm install --legacy-peer-deps && npm run build
 
 # Expose port 80
 EXPOSE 80
