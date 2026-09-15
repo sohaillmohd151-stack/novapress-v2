@@ -39,7 +39,7 @@ a2enconf override
 
 RUN a2enmod rewrite
 
-# Install PHP and Node dependencies, then build frontend assets
+# Install dependencies and build frontend assets
 RUN composer install --no-dev --optimize-autoloader
 RUN npm install --legacy-peer-deps && npm run build
 
