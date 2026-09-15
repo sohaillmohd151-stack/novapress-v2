@@ -1,10 +1,12 @@
 #!/bin/sh
-# Ensure storage and bootstrap/cache are fully writable by www-data
+# Recreate storage directories and fix permissions safely
 mkdir -p /var/www/html/storage/framework/sessions
 mkdir -p /var/www/html/storage/framework/views
 mkdir -p /var/www/html/storage/framework/cache
 mkdir -p /var/www/html/storage/logs
 
+# Ensure log file exists and is writable by www-data
+touch /var/www/html/storage/logs/laravel.log
 chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 chmod -R 777 /var/www/html/storage /var/www/html/bootstrap/cache
 
